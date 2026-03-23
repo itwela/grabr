@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.meteor {
+  transform: rotate(var(--meteor-angle));
+  background: rgb(167 139 250 / 0.8);
+  box-shadow: 0 0 0 1px rgb(255 255 255 / 0.08);
+  animation-name: meteor-fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.meteor-tail {
+  background: linear-gradient(to right, rgb(167 139 250 / 0.7), transparent);
+}
+
+@keyframes meteor-fall {
+  0% {
+    transform: rotate(var(--meteor-angle)) translateX(0);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(var(--meteor-angle)) translateX(-900px);
+    opacity: 0;
+  }
+}
